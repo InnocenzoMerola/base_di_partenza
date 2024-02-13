@@ -27,6 +27,9 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 @media screen and (min-width: 800px) {
@@ -121,7 +124,6 @@ h1 {
   line-height: 1.2;
   font-weight: bold;
   letter-spacing: -0.03em;
-  margin-bottom: 0.7em;
 }
 
 p,
@@ -387,139 +389,155 @@ footer a {
     display: none;
   }
 }
-
+/* ------------- */
 .social,
 .turnTop {
   line-height: 1;
   position: fixed;
-  right: -18px;
-  z-index: 999;
+  right: -15px;
 }
 
 .social {
-  top: 16px;
+  bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .turnTop {
   bottom: 16px;
 }
+
 .social a,
 .turnTop a {
-  color: #f7575e;
+  color: #ff2b34;
   font-size: 2rem;
   display: block;
 }
 
 .social a {
-  color: rgb(45, 101, 185);
+  color: rgb(15 100 227);
 }
 
-.social a:first-child {
-  margin-bottom: 1rem;
+.social a + a {
+  margin-top: 10px;
 }
 
-.social .fa-social,
-.turnTop .fa-top {
-  background: #ffffffa1;
+.far {
+  font-weight: 600;
+}
+
+.social .far,
+.turnTop .far {
+  background: #ffffffb5;
   backdrop-filter: blur(2px);
-  line-height: 0.8;
+  line-height: 0.9;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
   padding: 16px;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
-@media screen and (max-width: 499px) {
-  .clearfix {
-    z-index: 0;
-    position: relative;
-  }
+.clearfix h1 {
+  position: relative;
+  margin-bottom: 30px;
+}
 
-  .under {
-    position: relative;
-    margin-bottom: 30px;
-  }
+.clearfix h1 span img {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 80%;
+  left: 0;
+  opacity: 0.7;
+}
 
-  .under h1 {
-    margin-bottom: 0;
-  }
-  .under img {
-    position: absolute;
-    bottom: -12px;
-    opacity: 0.6;
-    z-index: -1;
-    width: 23em;
-  }
-  .clearfix .under + p {
-    color: gray;
-  }
+.clearfix h1 span {
+  position: relative;
+  z-index: 0;
+}
 
-  .clearfix p + p {
-    font-size: 17px;
-    line-height: 25px;
-  }
+.clearfix .clearfix h1 + p {
+  color: gray;
+}
 
-  p,
-  ul,
-  ol,
-  h2 {
-    font-size: 16px;
-    font-size: 16px;
-    font-weight: 300;
-  }
+.clearfix p + p {
+  font-size: 17px;
+  line-height: 25px;
+}
 
-  section h2 {
-    position: absolute;
-    top: -20px;
-    text-transform: uppercase;
-    font-size: 30px;
-    box-shadow: 1px 1px 1px 1px #818181;
-  }
+p,
+ul,
+ol,
+h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
 
-  section p {
-    margin-top: 30px;
-  }
+section h2 {
+  position: absolute;
+  top: -20px;
+  text-transform: uppercase;
+  font-size: 30px;
+  box-shadow: 1px 1px 1px 1px #818181;
+}
 
-  aside div {
-    position: relative;
-  }
+section p {
+  margin-top: 30px;
+}
 
-  .fa-tag {
-    position: absolute;
-    top: 8px;
-    right: 5px;
-    font-size: 65px;
-    color: #a9a9a9b0;
-  }
+aside div {
+  position: relative;
+}
+
+.fa-tag {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  font-size: 65px;
+  color: #a9a9a9b0;
 }
 
 @media screen and (min-width: 500px) {
-  .clearfix {
-    z-index: 0;
-    position: relative;
-  }
-
-  .under {
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .under h1 {
-    margin-bottom: 0;
-  }
-  .under img {
-    position: absolute;
-    bottom: -15px;
-    opacity: 0.6;
-    z-index: -1;
-    width: 27em;
-  }
-  .clearfix .under + p {
-    color: gray;
-  }
-
   .clearfix p + p {
     font-size: 21px;
     line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  p,
+  ul,
+  ol,
+  h2,
+  address {
+    font-size: 17px;
+  }
+
+  .social {
+    top: 15px;
+  }
+
+  .social,
+  .turnTop {
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .clearfix p + p {
+    font-size: 19;
+    line-height: 40px;
+  }
+}
+
+@media screen and (min-width: 1070px) {
+  p,
+  ul,
+  ol,
+  h2,
+  address {
+    font-size: 19px;
+  }
+
+  section {
+    padding: 2.8rem 1rem;
   }
 }
